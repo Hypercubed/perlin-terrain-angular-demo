@@ -1,0 +1,14 @@
+{
+  "name": "noisejs",
+  "homepage": "https://github.com/josephg/noisejs",
+  "_release": "3861daee43",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "3861daee43d62f809126eb9783cf4091d4796ee8"
+  },
+  "_source": "git://github.com/josephg/noisejs.git",
+  "_target": "*",
+  "_originalSource": "josephg/noisejs",
+  "_direct": true
+}
