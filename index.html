@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Perlin noise</title>
+    <link rel="stylesheet" href="bower_components\bootstrap\dist\css\bootstrap.css" />
+    <script src="bower_components\angular\angular.js"></script>
+    <script src="bower_components\noisejs\perlin.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link />
+  </head>
+
+  <body ng-app="app" ng-controller="MainController as main">
+
+    <div class="centerbox">
+      <canvas></canvas>
+    </div>
+
+    <p class="text-center">
+      Chunk rendered in {{main.time}} ms
+    </p>
+    <p class="text-center">
+      {{main.hover}}
+    </p>
+
+    <div class="container">
+
+      <form class="form-horizontal">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="size" class="col-sm-3 control-label">Chunk size</label>
+            <div class="col-sm-9">
+              <input type="number" class="form-control" step="10" min="10" id="size" placeholder="Size" ng-model="main.size" ng-change="main.make(); main.clear()">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="seed" class="col-sm-3 control-label">Seed</label>
+            <div class="col-sm-9">
+              <input type="number" class="form-control" step="1024" id="seed" placeholder="Seed" ng-model="main.seed" ng-change="main.make(); main.clear()">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="seed" class="col-sm-3 control-label">Octives</label>
+            <div class="col-sm-9">
+              <input type="number" class="form-control" step="1" min="1" id="seed" placeholder="Octives" ng-model="main.octives" ng-change="main.make(); main.clear()">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="seaLevel" class="col-sm-3 control-label">Sea Level</label>
+            <div class="col-sm-9">
+              <input type="number" class="form-control" step="0.01" min="0"  max="1"  id="seaLevel" placeholder="Sea Level" ng-model="main.seaLevel" ng-change="main.clear()">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="treeLine" class="col-sm-3 control-label">Tree Line</label>
+            <div class="col-sm-9">
+              <input type="number" class="form-control" step="0.01" min="0"  max="1" id="treeLine" placeholder=">Tree Line" ng-model="main.treeLine" ng-change="main.clear()">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="fogOfWar" class="col-sm-3 control-label">"Fog of War"</label>
+            <div class="col-sm-9">
+              <input type="checkbox" id="fogOfWar" placeholder=">Tree Line" ng-model="main.fogOfWar" ng-change="main.clear()">
+              <p ng-show="main.fogOfWar">Use mouse to reveal map</p>
+            </div>
+          </div>
+        </div>
+      </form>
+
+    </div>
+
+
+  </body>
+
+</html>
